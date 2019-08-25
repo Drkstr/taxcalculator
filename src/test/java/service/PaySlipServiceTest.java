@@ -10,8 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class PaySlipServiceTest {
 
   private PaySlipService paySlipService = PaySlipService.getInstance();
-  private String fileName = "employees.csv";
-  private List<Payslip> payslips  =  paySlipService.calculatePayslips(fileName);
+  private String employeesFileName = "employees.csv";
+  private String payslipsfileName = "payslips.csv";
+  private List<Payslip> payslips  =  paySlipService.calculatePayslips(employeesFileName);
 
   @Test
   public void shouldHavePayslipWithGrossIncome() {
