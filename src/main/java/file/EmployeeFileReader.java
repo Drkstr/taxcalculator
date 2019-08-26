@@ -46,7 +46,8 @@ public class EmployeeFileReader {
   }
 
   private Reader getReader(String employeeFileName) {
-    File employeeFile = new File(ClassLoader.getSystemResource(employeeFileName).getFile());
+
+    File employeeFile = new File(employeeFileName);
     try {
       return new FileReader(employeeFile);
     } catch (FileNotFoundException e) {

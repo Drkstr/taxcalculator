@@ -24,9 +24,8 @@ public class PaySlipService {
     return instance;
   }
 
-  public List<Payslip> calculatePayslips(String fileName) {
+  public List<Payslip> calculatePayslips(List<Employee> employees) {
     List<Payslip> payslips = new ArrayList<>();
-    List<Employee> employees = fileReader.load(fileName);
     for (Employee employee : employees) {
       payslips.add(calculatePayslip(employee));
     }

@@ -24,8 +24,7 @@ public class PayslipFileWriter {
             }
             writer.close();
         } catch (IOException e) {
-
-
+            throw new RuntimeException("Problem writing file:" + fileName);
         }
     }
 
