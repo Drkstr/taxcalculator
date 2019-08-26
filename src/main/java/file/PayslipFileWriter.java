@@ -16,16 +16,25 @@ public class PayslipFileWriter {
     }
 
     public void writePayslips(String fileName, List<Payslip> payslips) {
-        File payslipFile = new File(ClassLoader.getSystemResource(fileName).getFile());
+        File payslipFile = new File(fileName);
         try {
             CSVWriter writer = new CSVWriter(new FileWriter(payslipFile));
             for (Payslip payslip : payslips) {
-                writer.writeNext(new String[] {String.valueOf(payslip.getIncomeTax()),"","",""});
+                writer.writeNext(buildLine(payslip));
             }
             writer.close();
         } catch (IOException e) {
 
 
         }
+    }
+
+    private String[] buildLine(Payslip payslip) {
+        return new String[] {
+          String.valueOf(payslip.getIncomeTax()),
+          String.valueOf(payslip.getGrossIncome()),
+          String.valueOf(payslip.getNetIncome()),
+          String.valueOf(payslip.getSuperannuation())
+        };
     }
 }

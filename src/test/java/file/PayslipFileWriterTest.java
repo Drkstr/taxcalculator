@@ -1,7 +1,6 @@
 package file;
 
 import com.opencsv.CSVReader;
-import domain.Employee;
 import domain.Payslip;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -14,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class PayslipFileWriterTest {
 
@@ -29,11 +27,32 @@ class PayslipFileWriterTest {
     payslips.add(payslip1);
   }
 
-  //@Test
-  public void shouldWriteGrossSalary() {
+  @Test
+  public void shouldWriteIncomeTax() {
     writer.writePayslips(fileName, payslips);
     List<Payslip> csvData = load(fileName);
     assertEquals(1000, csvData.get(0).getIncomeTax());
+  }
+
+  @Test
+  public void shouldWriteGrossIncome() {
+    writer.writePayslips(fileName, payslips);
+    List<Payslip> csvData = load(fileName);
+    assertEquals(10000, csvData.get(0).getGrossIncome());
+  }
+
+  @Test
+  public void shouldWriteNetIncome() {
+    writer.writePayslips(fileName, payslips);
+    List<Payslip> csvData = load(fileName);
+    assertEquals(9000, csvData.get(0).getNetIncome());
+  }
+
+  @Test
+  public void shouldWriteSuperannuation() {
+    writer.writePayslips(fileName, payslips);
+    List<Payslip> csvData = load(fileName);
+    assertEquals(500, csvData.get(0).getSuperannuation());
   }
 
   private List<Payslip> load(String fileName) {
@@ -53,7 +72,7 @@ class PayslipFileWriterTest {
   }
 
   private Reader getReader(String fileName) {
-    File employeeFile = new File(ClassLoader.getSystemResource(fileName).getFile());
+    File employeeFile = new File(fileName);
     try {
       return new FileReader(employeeFile);
     } catch (FileNotFoundException e) {
