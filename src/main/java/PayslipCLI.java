@@ -14,8 +14,15 @@ public class PayslipCLI {
 
     public static void main(String... args) {
 
+        validateInput(args);
         List<Employee> employees = employeeFileReader.load(args[0]);
         List<Payslip> payslips = paySlipService.calculatePayslips(employees);
         payslipFileWriter.writePayslips(args[1],payslips);
+    }
+
+    private static void validateInput(String[] args) {
+        if (args.length < 2) {
+            throw new RuntimeException("Input and output files must be defined.");
+        }
     }
 }

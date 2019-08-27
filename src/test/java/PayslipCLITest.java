@@ -7,6 +7,7 @@ import java.io.File;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class PayslipCLITest {
 
@@ -20,6 +21,12 @@ class PayslipCLITest {
     List<Payslip> payslips = payslipFileReader.load(payslipsFileName);
 
     assertEquals(5004, payslips.get(0).getGrossIncome());
+  }
+
+  @Test
+  public void shouldValidateInput() {
+    RuntimeException exception = assertThrows(RuntimeException.class, () -> PayslipCLI.main());
+    assertEquals("Input and output files must be defined.", exception.getMessage());
   }
 
   @AfterAll
