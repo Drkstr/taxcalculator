@@ -31,7 +31,7 @@ public class EmployeeFileReader {
         employees.add(new Employee(line[0], line[1], parseSalary(line[2]), parseSuperValue(line[3]), line[4]));
       }
     } catch (Exception e) {
-      throw new RuntimeException("Problem CSV line. Line:" + line);
+      throw new RuntimeException("Problem CSV line.");
     }
 
     return employees;

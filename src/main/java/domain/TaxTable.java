@@ -26,7 +26,8 @@ public class TaxTable {
     return taxTable.stream()
       .filter(taxBracket -> matchesBracket(annualIncome, taxBracket))
       .findFirst()
-      .orElse(null);
+      .orElseThrow(() -> new RuntimeException("No tax bracket found. Invalid income. Income:" + annualIncome));
+
   }
 
   public static TaxTable getInstance() {

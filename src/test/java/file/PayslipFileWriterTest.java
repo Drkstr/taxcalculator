@@ -52,7 +52,8 @@ class PayslipFileWriterTest {
   @Test
   public void shouldThrowExceptionWhenInvalidFile()
   {
-    assertThrows(RuntimeException.class, () -> writer.writePayslips("/", payslips));
+    RuntimeException exception = assertThrows(RuntimeException.class, () -> writer.writePayslips("/", payslips));
+    assertEquals("Problem writing file:/", exception.getMessage());
   }
 
   @AfterAll

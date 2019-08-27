@@ -40,11 +40,13 @@ class EmployeeFileReaderTest {
 
   @Test
   public void shouldExceptionWhenInvalidFile() {
-    assertThrows(RuntimeException.class, () -> reader.load("123.csv"));
+    RuntimeException exception = assertThrows(RuntimeException.class, () -> reader.load("123.csv"));
+    assertEquals("Problem reading file. Check file path.", exception.getMessage());
   }
 
   @Test
   public void shouldExceptionWhenFileHasInvalidData() {
-    assertThrows(RuntimeException.class, () -> reader.load("employees_invalid_number.csv"), "asd");
+    RuntimeException exception = assertThrows(RuntimeException.class, () -> reader.load(ClassLoader.getSystemResource("employees_invalid_number.csv").getPath()));
+    assertEquals("Problem CSV line.", exception.getMessage());
   }
 }
