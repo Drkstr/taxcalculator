@@ -28,13 +28,17 @@ public class EmployeeFileReader {
     String[] line = null;
     try {
       while ((line = csvReader.readNext()) != null) {
-        employees.add(new Employee(line[0], line[1], parseSalary(line[2]), parseSuperValue(line[3]), line[4]));
+        employees.add(processLine(line));
       }
     } catch (Exception e) {
       throw new RuntimeException("Problem CSV line.");
     }
 
     return employees;
+  }
+
+  private Employee processLine(String[] line) {
+    return new Employee(line[0], line[1], parseSalary(line[2]), parseSuperValue(line[3]), line[4]);
   }
 
   private double parseSalary(String salary) {

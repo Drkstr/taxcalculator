@@ -25,7 +25,6 @@ public class IncomeTaxCalculator {
       .subtract(new BigDecimal(taxBracket.getLowerBounds()-1))
       .multiply(new BigDecimal(taxBracket.getTaxAmountPercent()))
       .add(new BigDecimal(taxBracket.getAccumulatedTax()))
-      .setScale(2, RoundingMode.HALF_UP)
       .divide(BigDecimal.valueOf(12), RoundingMode.HALF_UP)
       .setScale(0, BigDecimal.ROUND_HALF_UP).intValue();
   }

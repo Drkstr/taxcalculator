@@ -15,9 +15,12 @@ public class PayslipCLI {
     public static void main(String... args) {
 
         validateInput(args);
-        List<Employee> employees = employeeFileReader.load(args[0]);
+        String inputFileName = args[0];
+        String outputFileName = args[1];
+
+        List<Employee> employees = employeeFileReader.load(inputFileName);
         List<Payslip> payslips = paySlipService.calculatePayslips(employees);
-        payslipFileWriter.writePayslips(args[1],payslips);
+        payslipFileWriter.writePayslips(outputFileName,payslips);
     }
 
     private static void validateInput(String[] args) {
