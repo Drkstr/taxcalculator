@@ -1,9 +1,8 @@
-package service;
+package payslipcalculator.core.service;
 
-import calculator.IncomeTaxCalculator;
-import domain.Employee;
-import domain.Payslip;
-import file.EmployeeFileReader;
+import payslipcalculator.core.calculator.IncomeTaxCalculator;
+import payslipcalculator.core.domain.Employee;
+import payslipcalculator.core.domain.Payslip;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -11,17 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PaySlipService {
-  private static PaySlipService instance = new PaySlipService();
+
   private final IncomeTaxCalculator taxCalculator;
-  private final EmployeeFileReader fileReader;
 
-  private PaySlipService() {
-    fileReader = EmployeeFileReader.getInstance();
-    taxCalculator = IncomeTaxCalculator.getInstance();
-  }
-
-  public static PaySlipService getInstance() {
-    return instance;
+  public PaySlipService(IncomeTaxCalculator taxCalculator) {
+    this.taxCalculator = taxCalculator;
   }
 
   public List<Payslip> calculatePayslips(List<Employee> employees) {

@@ -1,6 +1,6 @@
-package file;
+package payslipcalculator.shell.file;
 
-import domain.Payslip;
+import payslipcalculator.core.domain.Payslip;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

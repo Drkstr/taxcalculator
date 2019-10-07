@@ -1,7 +1,9 @@
-import domain.Payslip;
-import file.PayslipFileReader;
+package payslipcalculator.shell;
+
+import payslipcalculator.shell.file.PayslipFileReader;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
+import payslipcalculator.core.domain.Payslip;
 
 import java.io.File;
 import java.util.List;
