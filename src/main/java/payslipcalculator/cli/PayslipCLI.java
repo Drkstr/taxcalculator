@@ -1,12 +1,10 @@
 package payslipcalculator.cli;
 
-import payslipcalculator.payslip.calculator.IncomeTaxCalculator;
-import payslipcalculator.payslip.domain.Employee;
-import payslipcalculator.payslip.domain.Payslip;
-import payslipcalculator.cli.file.EmployeeFileReader;
-import payslipcalculator.cli.file.PayslipFileWriter;
-import payslipcalculator.payslip.service.PaySlipService;
-import payslipcalculator.cli.repository.TaxTableHardcodedRepository;
+import payslipcalculator.payslip.Employee;
+import payslipcalculator.payslip.IncomeTaxCalculator;
+import payslipcalculator.payslip.PaySlipCalculator;
+import payslipcalculator.payslip.Payslip;
+import payslipcalculator.repository.TaxTableHardcodedRepository;
 
 import java.util.List;
 
@@ -15,7 +13,7 @@ public class PayslipCLI {
     private static final EmployeeFileReader employeeFileReader = EmployeeFileReader.getInstance();
     private static final PayslipFileWriter payslipFileWriter = PayslipFileWriter.getInstance();
     private static IncomeTaxCalculator incomeTaxCalculator = new IncomeTaxCalculator(new TaxTableHardcodedRepository());
-    private static PaySlipService paySlipService = new PaySlipService(incomeTaxCalculator);
+    private static PaySlipCalculator paySlipService = new PaySlipCalculator(incomeTaxCalculator);
 
     public static void main(String... args) {
 

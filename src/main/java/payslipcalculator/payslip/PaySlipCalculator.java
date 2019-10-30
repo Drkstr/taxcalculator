@@ -1,19 +1,15 @@
-package payslipcalculator.payslip.service;
-
-import payslipcalculator.payslip.calculator.IncomeTaxCalculator;
-import payslipcalculator.payslip.domain.Employee;
-import payslipcalculator.payslip.domain.Payslip;
+package payslipcalculator.payslip;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PaySlipService {
+public class PaySlipCalculator {
 
   private final IncomeTaxCalculator taxCalculator;
 
-  public PaySlipService(IncomeTaxCalculator taxCalculator) {
+  public PaySlipCalculator(IncomeTaxCalculator taxCalculator) {
     this.taxCalculator = taxCalculator;
   }
 

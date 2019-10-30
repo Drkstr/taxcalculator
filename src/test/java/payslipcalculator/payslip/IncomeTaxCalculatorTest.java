@@ -1,7 +1,7 @@
-package payslipcalculator.payslip.calculator;
+package payslipcalculator.payslip;
 
 import org.junit.jupiter.api.Test;
-import payslipcalculator.cli.repository.TaxTableHardcodedRepository;
+import payslipcalculator.repository.TaxTableHardcodedRepository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

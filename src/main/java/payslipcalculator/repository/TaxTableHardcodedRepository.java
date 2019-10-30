@@ -1,12 +1,13 @@
-package payslipcalculator.cli.repository;
+package payslipcalculator.repository;
 
-import payslipcalculator.payslip.domain.TaxBracket;
-import payslipcalculator.payslip.domain.TaxTable;
+import payslipcalculator.payslip.TaxTableRepository;
+import payslipcalculator.payslip.TaxBracket;
+import payslipcalculator.payslip.TaxTable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaxTableHardcodedRepository implements payslipcalculator.payslip.repository.TaxTableRepository {
+public class TaxTableHardcodedRepository implements TaxTableRepository {
   public TaxTable getTaxTable(int year) {
     List<TaxBracket> taxBrackets = new ArrayList<>();
     taxBrackets.add(new TaxBracket(0,18200,0,0));

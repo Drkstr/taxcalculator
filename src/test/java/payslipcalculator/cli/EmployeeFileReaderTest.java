@@ -1,7 +1,7 @@
-package payslipcalculator.cli.file;
+package payslipcalculator.cli;
 
-import payslipcalculator.payslip.domain.Employee;
 import org.junit.jupiter.api.Test;
+import payslipcalculator.payslip.Employee;
 
 import java.util.List;
 
