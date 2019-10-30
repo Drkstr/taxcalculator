@@ -1,10 +1,10 @@
-package payslipcalculator.core.domain;
+package payslipcalculator.payslip.domain;
 
 import java.util.List;
 
 public class TaxTable {
 
-  private List<TaxBracket> taxTable;
+  private final List<TaxBracket> taxTable;
 
   public TaxTable(List<TaxBracket> taxBrackets) {
     this.taxTable=taxBrackets;

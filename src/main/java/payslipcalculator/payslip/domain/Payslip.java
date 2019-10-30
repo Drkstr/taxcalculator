@@ -1,4 +1,4 @@
-package payslipcalculator.core.domain;
+package payslipcalculator.payslip.domain;
 
 import lombok.Getter;
 

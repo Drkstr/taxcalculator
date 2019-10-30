@@ -1,12 +1,12 @@
-package payslipcalculator.shell;
+package payslipcalculator.cli;
 
-import payslipcalculator.core.calculator.IncomeTaxCalculator;
-import payslipcalculator.core.domain.Employee;
-import payslipcalculator.core.domain.Payslip;
-import payslipcalculator.shell.file.EmployeeFileReader;
-import payslipcalculator.shell.file.PayslipFileWriter;
-import payslipcalculator.core.service.PaySlipService;
-import payslipcalculator.shell.repository.TaxTableHardcodedRepository;
+import payslipcalculator.payslip.calculator.IncomeTaxCalculator;
+import payslipcalculator.payslip.domain.Employee;
+import payslipcalculator.payslip.domain.Payslip;
+import payslipcalculator.cli.file.EmployeeFileReader;
+import payslipcalculator.cli.file.PayslipFileWriter;
+import payslipcalculator.payslip.service.PaySlipService;
+import payslipcalculator.cli.repository.TaxTableHardcodedRepository;
 
 import java.util.List;
 
@@ -26,9 +26,10 @@ public class PayslipCLI {
         List<Employee> employees = employeeFileReader.load(inputFileName);
         List<Payslip> payslips = paySlipService.calculatePayslips(employees);
         payslipFileWriter.writePayslips(outputFileName,payslips);
+
     }
 
-    private static void validateInput(String[] args) {
+    private static void validateInput(String... args) {
         if (args.length < 2) {
             throw new RuntimeException("Input and output files must be defined.");
         }

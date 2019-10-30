@@ -1,8 +1,8 @@
-package payslipcalculator.core.service;
+package payslipcalculator.payslip.service;
 
-import payslipcalculator.core.calculator.IncomeTaxCalculator;
-import payslipcalculator.core.domain.Employee;
-import payslipcalculator.core.domain.Payslip;
+import payslipcalculator.payslip.calculator.IncomeTaxCalculator;
+import payslipcalculator.payslip.domain.Employee;
+import payslipcalculator.payslip.domain.Payslip;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

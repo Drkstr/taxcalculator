@@ -1,11 +1,11 @@
-package payslipcalculator.core.service;
+package payslipcalculator.payslip.service;
 
-import payslipcalculator.core.calculator.IncomeTaxCalculator;
-import payslipcalculator.core.domain.Employee;
-import payslipcalculator.core.domain.Payslip;
+import payslipcalculator.payslip.calculator.IncomeTaxCalculator;
+import payslipcalculator.payslip.domain.Employee;
+import payslipcalculator.payslip.domain.Payslip;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import payslipcalculator.shell.repository.TaxTableHardcodedRepository;
+import payslipcalculator.cli.repository.TaxTableHardcodedRepository;
 
 import java.util.ArrayList;
 import java.util.List;

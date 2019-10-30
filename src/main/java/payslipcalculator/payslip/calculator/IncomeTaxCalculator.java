@@ -1,17 +1,17 @@
-package payslipcalculator.core.calculator;
+package payslipcalculator.payslip.calculator;
 
-import payslipcalculator.core.domain.TaxBracket;
-import payslipcalculator.core.domain.TaxTable;
-import payslipcalculator.shell.repository.TaxTableHardcodedRepository;
+import payslipcalculator.payslip.domain.TaxBracket;
+import payslipcalculator.payslip.domain.TaxTable;
+import payslipcalculator.payslip.repository.TaxTableRepository;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class IncomeTaxCalculator {
 
-  private TaxTableHardcodedRepository taxTableHardcodedRepository;
+  private TaxTableRepository taxTableHardcodedRepository;
 
-  public IncomeTaxCalculator(TaxTableHardcodedRepository taxTableHardcodedRepository) {
+  public IncomeTaxCalculator(TaxTableRepository taxTableHardcodedRepository) {
     this.taxTableHardcodedRepository = taxTableHardcodedRepository;
   }
 

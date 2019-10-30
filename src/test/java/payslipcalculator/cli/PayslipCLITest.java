@@ -1,9 +1,9 @@
-package payslipcalculator.shell;
+package payslipcalculator.cli;
 
-import payslipcalculator.shell.file.PayslipFileReader;
+import payslipcalculator.cli.file.PayslipFileReader;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
-import payslipcalculator.core.domain.Payslip;
+import payslipcalculator.payslip.domain.Payslip;
 
 import java.io.File;
 import java.util.List;
