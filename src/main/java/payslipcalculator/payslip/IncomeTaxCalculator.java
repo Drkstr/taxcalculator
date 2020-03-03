@@ -7,8 +7,8 @@ public class IncomeTaxCalculator {
 
   private TaxTableRepository taxTableRepository;
 
-  public IncomeTaxCalculator(TaxTableRepository taxTableHardcodedRepository) {
-    this.taxTableRepository = taxTableHardcodedRepository;
+  public IncomeTaxCalculator(TaxTableRepository taxTableRepository) {
+    this.taxTableRepository = taxTableRepository;
   }
 
   public int calculateTax(double annualIncome) {
