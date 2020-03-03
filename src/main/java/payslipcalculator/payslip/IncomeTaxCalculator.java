@@ -1,24 +1,18 @@
-package calculator;
-
-import domain.TaxBracket;
-import domain.TaxTable;
+package payslipcalculator.payslip;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class IncomeTaxCalculator {
-  private static IncomeTaxCalculator instance = new IncomeTaxCalculator();
-  private final TaxTable taxTable = TaxTable.getInstance();
 
-  private IncomeTaxCalculator() {
+  private TaxTableRepository taxTableRepository;
 
-  }
-
-  public static IncomeTaxCalculator getInstance() {
-    return instance;
+  public IncomeTaxCalculator(TaxTableRepository taxTableHardcodedRepository) {
+    this.taxTableRepository = taxTableHardcodedRepository;
   }
 
   public int calculateTax(double annualIncome) {
+    TaxTable taxTable = taxTableRepository.getTaxTable(2018);
     TaxBracket taxBracket = taxTable.getTaxBracket(annualIncome);
 
     return new BigDecimal(annualIncome)

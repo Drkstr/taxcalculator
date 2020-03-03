@@ -1,7 +1,7 @@
-package file;
+package payslipcalculator.cli;
 
 import com.opencsv.CSVReader;
-import domain.Employee;
+import payslipcalculator.payslip.Employee;
 
 import java.io.File;
 import java.io.FileNotFoundException;

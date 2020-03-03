@@ -1,18 +1,17 @@
-package service;
+package payslipcalculator.payslip;
 
-import domain.Employee;
-import domain.Payslip;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import payslipcalculator.repository.TaxTableHardcodedRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class PaySlipServiceTest {
+class PaySlipCalculatorTest {
 
-  private static PaySlipService paySlipService = PaySlipService.getInstance();
+  private static PaySlipCalculator paySlipService = new PaySlipCalculator(new IncomeTaxCalculator(new TaxTableHardcodedRepository()));
   private static List<Payslip> payslips  =  null;
 
 

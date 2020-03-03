@@ -1,7 +1,7 @@
-package file;
+package payslipcalculator.cli;
 
 import com.opencsv.CSVWriter;
-import domain.Payslip;
+import payslipcalculator.payslip.Payslip;
 
 import java.io.File;
 import java.io.FileWriter;

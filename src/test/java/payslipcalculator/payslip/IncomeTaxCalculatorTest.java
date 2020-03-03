@@ -1,13 +1,14 @@
-package calculator;
+package payslipcalculator.payslip;
 
 import org.junit.jupiter.api.Test;
+import payslipcalculator.repository.TaxTableHardcodedRepository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class IncomeTaxCalculatorTest {
 
-  private IncomeTaxCalculator calculator = IncomeTaxCalculator.getInstance();
+  private IncomeTaxCalculator calculator = new IncomeTaxCalculator(new TaxTableHardcodedRepository());
 
 
   @Test
